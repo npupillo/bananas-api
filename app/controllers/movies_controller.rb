@@ -1,5 +1,5 @@
 class MoviesController < ApplicationController
-  before_action :set_movie, only: [:show, :update, :destroy]
+  before_action :set_movie, only: [:update, :destroy]
 
   # GET /movies
   # GET /movies.json
