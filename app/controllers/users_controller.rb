@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
   before_action :set_user, only: [:show, :update, :destroy]
 
- before_filter :authenticate, only: [:index]
+ # before_filter :authenticate, only: [:index]
 
       def sign_in
         user = User.find_by(email: params[:email])

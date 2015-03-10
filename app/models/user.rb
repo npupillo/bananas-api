@@ -5,6 +5,10 @@ class User < ActiveRecord::Base
   before_create :generate_token
 
   def generate_token
-    token = SecureRandom.uuid.gsub(/\-/,'');
+    return if token.present?
+    begin
+      self.token = SecureRandom.uuid.gsub(/\-/,'')
+      # self.token = "5"
+    end while self.class.exists?(token: token)
   end
 end
